@@ -1,6 +1,7 @@
 import Expenses from "./components/Expenses";
+import Card from "./components/Cards";
 
-function App() {
+const App = () => {
   const expenses = [
     {
       id: "e1",
@@ -26,12 +27,12 @@ function App() {
   return (
     <div>
       <h2>Let's get started!</h2>
-      <Expenses expenses={expenses[0]}></Expenses>
-      <Expenses expenses={expenses[1]}></Expenses>
-      <Expenses expenses={expenses[2]}></Expenses>
-      <Expenses expenses={expenses[3]}></Expenses>
+      <Expenses item={expenses[0]} />
+      <Expenses item={expenses[1]} />
+      <Expenses item={expenses[2]} />
+      <Expenses item={expenses[3]} />
     </div>
   );
-}
+};
 
 export default App;
