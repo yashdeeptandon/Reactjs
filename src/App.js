@@ -1,5 +1,5 @@
-import Expenses from "./components/Expenses";
-import Card from "./components/Cards";
+import Expenses from "./components/Expenses/Expenses";
+import Card from "./components/UI/Cards";
 
 const App = () => {
   const expenses = [
@@ -25,13 +25,13 @@ const App = () => {
   ];
 
   return (
-    <div>
+    <Card>
       <h2>Let's get started!</h2>
       <Expenses item={expenses[0]} />
       <Expenses item={expenses[1]} />
       <Expenses item={expenses[2]} />
       <Expenses item={expenses[3]} />
-    </div>
+    </Card>
   );
 };
 
