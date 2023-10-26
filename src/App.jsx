@@ -2,10 +2,15 @@ import { CORE_CONCEPTS } from "./data";
 import Header from "./components/Header";
 import CoreConcepts from "./components/CoreConcepts";
 import TabButton from "./components/TabButton";
+import { useState } from "react";
 
 function App() {
+
+  let tabContent = "Please click a button";
+
   function handleSelect(selectedButton) {
-    console.log(selectedButton);
+
+    tabContent = selectedButton;
   }
 
   return (
@@ -28,20 +33,12 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={() => handleSelect("components")}>
-              Components
-            </TabButton>
-            <TabButton onSelect={() => handleSelect("components")}>
-              JSX
-            </TabButton>
-            <TabButton onSelect={() => handleSelect("components")}>
-              Props
-            </TabButton>
-            <TabButton onSelect={() => handleSelect("components")}>
-              State
-            </TabButton>
+            <TabButton onSelect={() => handleSelect("components")}>Components</TabButton>
+            <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-          Dynamic Content
+          {tabContent}
         </section>
       </main>
     </div>
